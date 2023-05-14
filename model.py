@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 
-
 def conv3x3(in_channels, out_channels, stride=1):
     return nn.Conv2d(
         in_channels,
@@ -62,10 +61,9 @@ class Bottleneck(nn.Module):
     '''
     Bottleneck layer of ResNet
     '''
-    expansion = 4  # 出力のチャンネル数を入力のチャンネル数の何倍に拡大するか
+    expansion = 4
 
     def __init__(self, in_channels, channels, stride=1):
-        # print(in_channels, out_channels)
         super().__init__()
         self.conv1 = conv1x1(in_channels, channels)
         self.bn1 = nn.BatchNorm2d(channels)
@@ -75,7 +73,6 @@ class Bottleneck(nn.Module):
         self.bn3 = nn.BatchNorm2d(channels * self.expansion)
         self.relu = nn.ReLU(inplace=True)
 
-        # 入力と出力のチャンネル数が異なる場合、x をダウンサンプリングする。
         if in_channels != channels * self.expansion:
             self.shortcut = nn.Sequential(
                 conv1x1(in_channels, channels * self.expansion, stride),
@@ -141,10 +138,8 @@ class ResNet(nn.Module):
     def _make_layer(self, block, channels, blocks, stride):
         layers = []
 
-        # 最初の Residual Block
         layers.append(block(self.in_channels, channels, stride))
 
-        # 残りの Residual Block
         self.in_channels = channels * block.expansion
         for _ in range(1, blocks):
             layers.append(block(self.in_channels, channels))

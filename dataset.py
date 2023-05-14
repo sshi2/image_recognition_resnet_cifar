@@ -1,23 +1,14 @@
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
+
 from torchvision.transforms import (
-    CenterCrop,
-    # 複数のtransformを連続して行う
-    Compose,
-    # 自作の関数を渡すことで実行可能
-    Lambda,
-    # ランダムに画像を切り抜く
-    RandomCrop,
-    # ランダムに左右反転を行う
     RandomHorizontalFlip,
     RandomResizedCrop,
-    Resize,
     ToTensor,
 )
 from torchvision.datasets import (
     CIFAR10,
     CIFAR100,
-    MNIST
 )
 
 
