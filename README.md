@@ -1,11 +1,13 @@
 # ResNetによる画像認識
 ## 概要
 有名モデルResNetをCIAFRデータセットで学習させることができます。
-ResNetはモデルサイズを18,34,50,101,152から選択可能で、CIFARデータセットはCIAFR10, CIFAR100の何れかを選択できます。
+[ResNet](https://www.cv-foundation.org/openaccess/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html)はモデルサイズを18,34,50,101,152から選択可能で、CIFARデータセットはCIAFR10, CIFAR100の何れかを選択できます。
 
 ResNetはResidial Block（残差接続層）と呼ばれる構造を導入することで、よりモデルの層の数を増やして学習できるようにしたモデルです。
 
 残差接続層
+![image](https://github.com/sshi2/image_recognition_resnet_cifar/assets/92853315/1faa6694-2966-4b28-86db-6b2195ddf250)
+
 
 ## 学習
 学習設定は以下の５つ指定できます。
