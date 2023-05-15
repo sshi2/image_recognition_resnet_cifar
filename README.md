@@ -6,6 +6,7 @@
 ResNetはResidial Block（残差接続層）と呼ばれる構造を導入することで、よりモデルの層の数を増やして学習できるようにしたモデルです。
 
 残差接続層
+
 ![image](https://github.com/sshi2/image_recognition_resnet_cifar/assets/92853315/1faa6694-2966-4b28-86db-6b2195ddf250)
 
 
